@@ -1,0 +1,47 @@
+/* Contenedor para la imagen de usuario, define su tamaño, bordes redondeados y propiedades de estilo */
+.user-image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden; /* Oculta cualquier contenido que exceda los bordes del contenedor */
+    border-radius: 50%; /* Hace que el contenedor sea circular */
+    margin: 0 auto; 
+    cursor: pointer; /* Cambia el cursor a pointer para indicar interactividad */
+    position: relative; /* Posiciona el contenedor para que los elementos hijos (como la overlay) se alineen con respecto a él */
+    border: 1px solid black; /* Añade un borde negro alrededor del contenedor */
+}
+
+/* Estilo para la imagen dentro del contenedor */
+.user-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Escala y recorta la imagen para que llene completamente el contenedor sin deformarse */
+}
+
+/* Overlay que se superpone sobre la imagen, inicialmente invisible */
+.overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente negro */
+    color: white; 
+    opacity: 0; /* Inicialmente el overlay es invisible */
+    transition: opacity 0.3s; /* Efecto de transición suave al cambiar la opacidad */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del formulario con propiedades de redondeado */
+.form-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* Muestra el overlay al pasar el mouse sobre el contenedor de la imagen de usuario */
+.user-image-container:hover .overlay {
+    opacity: 1;
+}

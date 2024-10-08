@@ -1,0 +1,30 @@
+# Deshabilitar el listado de directorios en todo el sitio
+Options All -Indexes
+
+#Prender URLs amigables
+RewriteEngine On
+
+#Rutas amigables Administrador
+#Comando Ruta_Amigable Ruta_Referenciada
+RewriteRule ^login$ index.php
+RewriteRule ^inicio$ Modulos/Administrador/index.php
+RewriteRule ^personal$ Modulos/Administrador/gestionPersonal.php
+RewriteRule ^buses$ Modulos/Administrador/buses.php
+RewriteRule ^ordenBus$ Modulos/Administrador/ordenBuses.php
+RewriteRule ^ordenRanchera$ Modulos/Administrador/ordenRancheras.php
+RewriteRule ^rutas$ Modulos/Administrador/gestionRutas.php
+RewriteRule ^asignaciones$ Modulos/Administrador/asigRutas.php
+RewriteRule ^usuarioAdmin$ Modulos/Administrador/usuario.php
+RewriteRule ^reportes$ Modulos/Administrador/reportes.php
+
+#Rutas amigables Socios
+#Comando Ruta_Amigable Ruta_Referenciada
+RewriteRule ^usuarioSocio$ Modulos/Socio/usuario.php
+RewriteRule ^inicioSocio$ Modulos/Socio/index.php
+RewriteRule ^miBus$ Modulos/Socio/bus.php
+
+#Rutas amigables Choferes
+#Comando Ruta_Amigable Ruta_Referenciada
+RewriteRule ^usuarioChofer$ Modulos/Chofer/usuario.php
+RewriteRule ^inicioChofer$ Modulos/Chofer/index.php
+RewriteRule ^busAsignado$ Modulos/Chofer/bus.php
